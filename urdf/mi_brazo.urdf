@@ -12,16 +12,43 @@
 		<collision>
 			<geometry><cylinder length="0.1" radius="0.2"/></geometry>
 		</collision>
+		<!-- Intertial: Masa y momento de inercia -->
+		<inertial>
+			<mass value="10"/>
+			<inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+		</inertial>
 	</link>
 
 	<!-- Joint de base giratoria -->
 	<joint name="base_joint" type="revolute">
 		<parent link="base_link"/>
-		<child> link="link1"/>
-		<origin xyz= "0 0 0.05 rpy="0 0 0"/>
-		<axis xpy="0 0 1"/> <!-- giro en Z (Horizontal 360°) -->
-		<limit lower="-3.1416" upper="3.1416" effort="100" velocity="10"/>
+		<child link="link1"/>
+		<origin xyz= "0 0 0.05" rpy="0 0 0"/>
+		<axis xyz="0 0 1"/> <!-- giro en Z (Horizontal 360°) -->
+		<limit lower="-3.1416" upper="3.1416" effort="200" velocity="5"/>
 	</joint>
 
-	<!-- ... mas links y joints ... -->
+	<!-- LINK 1 -->
+	<link name="link1">
+		<visual>
+			<geometry><cylinder length="0.5" radius="0.05"/></geometry>
+			<origin xyz= "0 0 0.25" rpy= "0 0 0"/>
+			<material name="blue"><color rgba="0 0 1 1"/></material>
+		</visual>
+		<collision>
+			<geometry><cylinder length="0.5" radius="0.05"/></geometry>
+			<origin xyz= "0 0 0.25" rpy= "0 0 0"/>
+		</collision>
+		<inertial>
+			<mass value="2"/><inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyx="0" iyz="0" izz="0.1" izx="0" izy="0"/>
+		</inertial>
+	</link>
+	<joint name="shoulder_joint" type="revolute">
+		<parent link="link1"/>
+		<child link="link2"/>
+		<origin xyz="0 0 0.5" rpy="0 0 0"/>
+		<axis xyz="1 0 0"/> <!-- giro en X (Pitch) -->
+		<limit lower="-1.57" upper="1.57" effort="100" velocity="3"/>
+	</joint>
+
 </robot>	
