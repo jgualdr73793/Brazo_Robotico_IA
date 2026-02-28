@@ -1,54 +1,167 @@
 <?xml version="1.0"?>
 <robot name="Mi_Brazo">
 
-	<!-- Link base (fijo al suelo) -->
-	<Link name="base_link">
-		<!-- Visual : como se ve -->
-		<visual>
-			<geometry><cylinder length="0.1" raidus="0.2" /></geometry>
-			<material name="gray"><color rgba="0.5 0.5 0.5 1" /></material>
-		<visual>
-		<!-- Collision: para fisica -->
-		<collision>
-			<geometry><cylinder length="0.1" radius="0.2"/></geometry>
-		</collision>
-		<!-- Intertial: Masa y momento de inercia -->
-		<inertial>
-			<mass value="10"/>
-			<inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
-		</inertial>
-	</link>
+  <!-- Link base (fijo al suelo) -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.1" radius="0.2" />
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.1" radius="0.2"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+  </link>
 
-	<!-- Joint de base giratoria -->
-	<joint name="base_joint" type="revolute">
-		<parent link="base_link"/>
-		<child link="link1"/>
-		<origin xyz= "0 0 0.05" rpy="0 0 0"/>
-		<axis xyz="0 0 1"/> <!-- giro en Z (Horizontal 360°) -->
-		<limit lower="-3.1416" upper="3.1416" effort="200" velocity="5"/>
-	</joint>
+  <!-- Joint de base giratoria -->
+  <joint name="base_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="link1"/>
+    <origin xyz="0 0 0.05" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.1416" upper="3.1416" effort="200" velocity="5"/>
+  </joint>
 
-	<!-- LINK 1 -->
-	<link name="link1">
-		<visual>
-			<geometry><cylinder length="0.5" radius="0.05"/></geometry>
-			<origin xyz= "0 0 0.25" rpy= "0 0 0"/>
-			<material name="blue"><color rgba="0 0 1 1"/></material>
-		</visual>
-		<collision>
-			<geometry><cylinder length="0.5" radius="0.05"/></geometry>
-			<origin xyz= "0 0 0.25" rpy= "0 0 0"/>
-		</collision>
-		<inertial>
-			<mass value="2"/><inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyx="0" iyz="0" izz="0.1" izx="0" izy="0"/>
-		</inertial>
-	</link>
-	<joint name="shoulder_joint" type="revolute">
-		<parent link="link1"/>
-		<child link="link2"/>
-		<origin xyz="0 0 0.5" rpy="0 0 0"/>
-		<axis xyz="1 0 0"/> <!-- giro en X (Pitch) -->
-		<limit lower="-1.57" upper="1.57" effort="100" velocity="3"/>
-	</joint>
+  <!-- LINK 1 -->
+  <link name="link1">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.05"/>
+      </geometry>
+      <origin xyz="0 0 0.25" rpy="0 0 0"/>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.5" radius="0.05"/>
+      </geometry>
+      <origin xyz="0 0 0.25" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="2"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+  </link>
 
-</robot>	
+  <joint name="shoulder_joint" type="revolute">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <origin xyz="0 0 0.5" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-1.57" upper="1.57" effort="100" velocity="3"/>
+  </joint>
+
+  <!-- LINK 2 -->
+  <link name="link2">
+    <visual>
+      <geometry>
+        <cylinder length="0.4" radius="0.05"/>
+      </geometry>
+      <origin xyz="0 0 0.2" rpy="0 0 0"/>
+      <material name="green">
+        <color rgba="0 1 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.4" radius="0.05"/>
+      </geometry>
+      <origin xyz="0 0 0.2" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="2"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+  </link>
+
+  <joint name="elbow_joint" type="revolute">
+    <parent link="link2"/>
+    <child link="link3"/>
+    <origin xyz="0 0 0.4" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2" upper="2" effort="100" velocity="3"/>
+  </joint>
+
+  <!-- LINK 3 -->
+  <link name="link3">
+    <visual>
+      <geometry>
+        <cylinder length="0.3" radius="0.05"/>
+      </geometry>
+      <origin xyz="0 0 0.15" rpy="0 0 0"/>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.3" radius="0.05"/>
+      </geometry>
+      <origin xyz="0 0 0.15" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="2"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+  </link>
+
+  <joint name="wrist_pitch_joint" type="revolute">
+    <parent link="link3"/>
+    <child link="link4"/>
+    <origin xyz="0 0 0.3" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-1.57" upper="1.57" effort="100" velocity="3"/>
+  </joint>
+
+  <!-- LINK 4 -->
+  <link name="link4">
+    <visual>
+      <geometry>
+        <cylinder length="0.2" radius="0.05"/>
+      </geometry>
+      <origin xyz="0 0 0.1" rpy="0 0 0"/>
+      <material name="yellow">
+        <color rgba="1 1 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.2" radius="0.05"/>
+      </geometry>
+      <origin xyz="0 0 0.1" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="2"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+  </link>
+
+  <joint name="wrist_roll_joint" type="revolute">
+    <parent link="link4"/>
+    <child link="end_effector"/>
+    <origin xyz="0 0 0.2" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.1416" upper="3.1416" effort="100" velocity="3"/>
+  </joint>
+
+  <!-- End Effector -->
+  <link name="end_effector">
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>
+
+</robot>
