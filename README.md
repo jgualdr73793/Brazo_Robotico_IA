@@ -56,4 +56,4 @@ To replicate this simulation environment on your local machine:
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://https://github.com/jgualdr73793/Brazo_Robotico_IA)
+   git clone [https://https://github.com/jgualdr73793/Brazo_Robotico_IA]
