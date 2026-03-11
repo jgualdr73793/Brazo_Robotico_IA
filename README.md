@@ -16,7 +16,7 @@ The ultimate goal of this repository is to build a robust **Sim2Real (Simulation
 > **Note:** The following demonstration showcases the RL agent making real-time control decisions to autonomously actuate its joints and stabilize at a target position.
 
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/82c4c888-e45e-49d2-931d-e6a2f8ae5c53"autoplay loop muted playsinline width="80%"></video>
+  <video src="https://github.com/user-attachments/assets/82c4c888-e45e-49d2-931d-e6a2f8ae5c53" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" width="80%"></video>
 </div>
 ---
 
