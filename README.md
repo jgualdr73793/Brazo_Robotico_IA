@@ -16,7 +16,7 @@ The ultimate goal of this repository is to build a robust **Sim2Real (Simulation
 > **Note:** The following demonstration showcases the RL agent making real-time control decisions to autonomously actuate its joints and stabilize at a target position.
 
 <div align="center">
-  <img src="![2026-03-11 12-11-31 - Trim](https://github.com/user-attachments/assets/b9794ece-f493-4573-bc4e-26c0406cf74e)
+  <img src="https://github.com/user-attachments/assets/b9794ece-f493-4573-bc4e-26c0406cf74e
 " alt="AI Robotic Arm Simulation" width="80%">
 </div>
 
