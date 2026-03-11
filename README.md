@@ -16,12 +16,8 @@ The ultimate goal of this repository is to build a robust **Sim2Real (Simulation
 > **Note:** The following demonstration showcases the RL agent making real-time control decisions to autonomously actuate its joints and stabilize at a target position.
 
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/02d63bc7-b014-466a-97f3-93c1e48a614b" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" width="80%"></video>
+  <video src="https://github.com/user-attachments/assets/41433b14-1a7a-4858-9da5-80ab0f7c8df6" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" width="80%"></video>
 </div>
-
-
-
-
 
 ## 🧠 Project Architecture & Engineering Approach
 
