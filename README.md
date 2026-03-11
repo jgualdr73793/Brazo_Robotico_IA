@@ -16,7 +16,8 @@ The ultimate goal of this repository is to build a robust **Sim2Real (Simulation
 > **Note:** The following demonstration showcases the RL agent making real-time control decisions to autonomously actuate its joints and stabilize at a target position.
 
 <div align="center">
-  <img src="path/to/your/animation.gif" alt="AI Robotic Arm Simulation" width="80%">
+  <img src="![2026-03-11 12-11-31 - Trim](https://github.com/user-attachments/assets/b9794ece-f493-4573-bc4e-26c0406cf74e)
+" alt="AI Robotic Arm Simulation" width="80%">
 </div>
 
 ---
@@ -54,5 +55,4 @@ To replicate this simulation environment on your local machine:
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-   cd your-repo-name
+   git clone [https://https://github.com/jgualdr73793/Brazo_Robotico_IA)
